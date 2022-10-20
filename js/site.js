@@ -10,6 +10,9 @@ function getValues() {
 function ReverseAString(userString) {
   let revString = [];
 
+  const regex = /[^a-z0-9]/gi;
+  userString = userString.replace(regex, "");
+
   // reverse the string using decrementing for loop
   for (let index = userString.length - 1; index >= 0; index--) {
     revString += userString[index];

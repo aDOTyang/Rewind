@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>RacecaR: A Coding Challenge</title>
+    <title>Rewind: A Coding Challenge</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -99,6 +99,9 @@
                       function ReverseAString(userString) {
                         let revString = [];
                       
+                        const regex = /[^a-z0-9]/gi;
+                        userString = userString.replace(regex, "");
+
                         for (let index = userString.length - 1; index >= 0; index--) {
                           revString += userString[index];}
                         return revString;}
@@ -106,7 +109,7 @@
                       function displayString(revString) {
                         document.getElementById(
                           "msg"
-                        ).innerHTML = `Your string reversed is: <strong><h4>${revString}</h4></strong>`;
+                        ).innerHTML = `Your string reversed is: ${revString}`;
                       
                         document.getElementById("alert").classList.remove("invisible");}
                       </code>
@@ -114,9 +117,30 @@
         </div>
         <!-- Code Docs -->
         <div class="col-12 col-lg-4">
-          <p>The code is structured in one function</p>
-          <h5>displayMessage</h5>
-          <p>Prints out the message</p>
+          <p>
+            This is a simple app that reverses a string input using a
+            deprecating for loop to reverse the string input.
+          </p>
+          <h5>getValues()</h5>
+          <p>
+            We enter the application by calling this function on click via the
+            'Rewind' button. It pulls the user input string from the HTML form
+            and passes it to <b>ReverseAString() for modification.</b>
+          </p>
+          <h5>ReverseAString()</h5>
+          <p>
+            This function receives the user input from <b>getValues()</b> and
+            turns it into a regular expression. It then initializes an empty
+            array 'revString' to hold our reversed string, which is reversed via
+            deprecating for loop, before passing the array to
+            <b>displayString()</b> for output.
+          </p>
+          <h5>displayString()</h5>
+          <p>
+            Finally, this function takes the reversed string from
+            <b>ReverseAString()</b> and inserts it into the HTML to be displayed
+            in the results section of the page.
+          </p>
         </div>
       </div>
     </main>
